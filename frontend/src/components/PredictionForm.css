@@ -1,0 +1,293 @@
+/* ============================================================
+   PREDICTION FORM
+============================================================ */
+
+.prediction-form-card {
+  margin-bottom: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #d2e0f3;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(27, 70, 135, 0.07);
+
+  overflow: hidden;
+}
+
+.prediction-form-header {
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7faff,
+      #eef5ff
+    );
+
+  border-bottom: 1px solid #dbe6f6;
+}
+
+.prediction-form-label {
+  display: inline-flex;
+
+  padding: 5px 10px;
+
+  border-radius: 8px;
+
+  background: #e5efff;
+
+  border: 1px solid #c9dcfb;
+
+  color: #104cb0;
+
+  font-size: 12px;
+
+  font-weight: 850;
+}
+
+.prediction-form-header h2 {
+  margin: 7px 0 4px;
+
+  color: #102f67;
+
+  font-size: 25px;
+}
+
+.prediction-form-header p {
+  margin: 0;
+
+  color: #627493;
+
+  font-size: 13px;
+}
+
+.prediction-form-icon {
+  width: 55px;
+  height: 55px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e2edff;
+
+  color: #155ed8;
+
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.prediction-form-card form {
+  padding: 20px;
+}
+
+.prediction-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.prediction-field {
+  min-width: 0;
+}
+
+.prediction-field label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #304b75;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.prediction-field input {
+  width: 100%;
+
+  height: 42px;
+
+  padding: 0 11px;
+
+  border: 1px solid #c7d7ed;
+
+  border-radius: 8px;
+
+  background: #fbfdff;
+
+  color: #183b70;
+
+  font-size: 13px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.prediction-field input:focus {
+  border-color: #4382e8;
+
+  box-shadow:
+    0 0 0 3px rgba(46, 112, 226, 0.1);
+
+  background: #ffffff;
+}
+
+.prediction-field input:read-only {
+  background: #eef4fc;
+
+  color: #557092;
+}
+
+.prediction-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 18px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #e3eaf5;
+}
+
+.generate-prediction-button {
+  min-width: 190px;
+
+  height: 45px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: #145ee4;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 13px rgba(20, 94, 228, 0.22);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.generate-prediction-button:hover {
+  background: #0c4fc8;
+
+  transform: translateY(-1px);
+}
+
+.generate-prediction-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.prediction-success {
+  margin-top: 16px;
+
+  padding: 12px 14px;
+
+  border-radius: 9px;
+
+  background: #e5f8ec;
+
+  border: 1px solid #bcebcf;
+
+  color: #08773a;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prediction-error {
+  margin-top: 16px;
+
+  padding: 12px 14px;
+
+  border-radius: 9px;
+
+  background: #fff0f1;
+
+  border: 1px solid #ffc9cb;
+
+  color: #a4242c;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  font-size: 13px;
+}
+
+.prediction-error strong {
+  font-size: 13px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1200px) {
+  .prediction-form-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .prediction-form-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .prediction-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-form-header {
+    align-items: flex-start;
+  }
+
+  .prediction-form-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .generate-prediction-button {
+    width: 100%;
+  }
+
+  .prediction-form-actions {
+    display: block;
+  }
+}

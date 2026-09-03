@@ -1,0 +1,3204 @@
+/* ============================================================
+   AI HOSPITAL READMISSION PREDICTION
+   COMPLETE GLOBAL STYLES
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f7f7fb;
+  color: #29245f;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+/* ============================================================
+   APP SHELL
+   ============================================================ */
+
+.app-shell {
+  min-height: 100vh;
+
+  display: flex;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #faf9ff 45%,
+      #f5f2ff 100%
+    );
+}
+
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.sidebar {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 270px;
+
+  padding: 28px 18px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  border-right: 1px solid #e7e2f1;
+
+  z-index: 100;
+}
+
+
+/* Remove old logo */
+
+.brand-logo,
+.brand-heart {
+  display: none !important;
+}
+
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  padding:
+    8px
+    12px
+    26px;
+
+  border-bottom:
+    1px
+    solid
+    #ebe7f3;
+}
+
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.3;
+}
+
+
+.brand-text strong {
+  color: #29245f;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+.brand-text span {
+  color: #817c9e;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   SIDEBAR NAVIGATION
+   ============================================================ */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+
+.nav-item {
+  width: 100%;
+  min-height: 58px;
+
+  border: 0;
+  border-radius: 13px;
+
+  background: transparent;
+
+  color: #777293;
+
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  padding:
+    0
+    14px;
+
+  text-align: left;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.nav-item span {
+  width: 24px;
+  min-width: 24px;
+
+  text-align: center;
+
+  color: #8d87b3;
+
+  font-size: 18px;
+}
+
+
+.nav-item:hover {
+  background: #f7f3ff;
+
+  color: #673cff;
+}
+
+
+.nav-item.active {
+  background:
+    linear-gradient(
+      90deg,
+      #f1eaff,
+      #f8f5ff
+    );
+
+  color: #673cff;
+
+  box-shadow:
+    inset 4px 0 0 #6d3cff;
+}
+
+
+.nav-item.active span {
+  color: #673cff;
+}
+
+
+/* ============================================================
+   SIDEBAR BACKEND
+   ============================================================ */
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+
+.backend-card {
+  padding: 18px 16px;
+
+  border:
+    1px
+    solid
+    #e6e0f1;
+
+  border-radius: 17px;
+
+  background: #fff;
+
+  box-shadow:
+    0
+    8px
+    25px
+    rgba(52, 37, 98, 0.05);
+}
+
+
+.backend-indicator {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #625d7b;
+}
+
+
+.backend-indicator > span {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #22c77a;
+
+  box-shadow:
+    0
+    0
+    0
+    5px
+    rgba(34, 199, 122, 0.12);
+}
+
+
+.backend-card.disconnected
+.backend-indicator
+> span {
+  background: #ef4444;
+
+  box-shadow:
+    0
+    0
+    0
+    5px
+    rgba(239, 68, 68, 0.12);
+}
+
+
+.backend-indicator strong {
+  font-size: 14px;
+}
+
+
+.backend-card p {
+  margin:
+    12px
+    0
+    6px;
+
+  color: #403b65;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
+.backend-card small {
+  color: #a09bb8;
+
+  font-size: 13px;
+}
+
+
+.sidebar-footer {
+  margin-top: 20px;
+
+  text-align: center;
+
+  color: #aaa4be;
+
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   MAIN AREA
+   ============================================================ */
+
+.main-area {
+  width: calc(100% - 270px);
+
+  min-height: 100vh;
+
+  margin-left: 270px;
+
+  padding:
+    0
+    38px
+    50px;
+
+  overflow-x: hidden;
+}
+
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+
+.topbar {
+  min-height: 150px;
+
+  padding:
+    32px
+    0
+    24px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 35px;
+
+  border-bottom:
+    1px
+    solid
+    #ebe7f4;
+}
+
+
+.topbar-title-area {
+  min-width: 0;
+}
+
+
+.topbar-label {
+  margin:
+    0
+    0
+    12px;
+
+  color: #7347ff;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+/* ============================================================
+   MAIN TITLE
+   ============================================================ */
+
+.main-title-row {
+  min-height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.main-title-row h1 {
+  margin: 0;
+
+  color: #28215f;
+
+  font-size:
+    clamp(
+      30px,
+      2.5vw,
+      42px
+    );
+
+  line-height: 1.15;
+
+  font-weight: 850;
+
+  letter-spacing: -1.2px;
+}
+
+
+/* ============================================================
+   HEARTBEAT LOGO
+   ============================================================ */
+
+.title-heartbeat-logo {
+  width: 58px;
+  height: 58px;
+
+  min-width: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  animation:
+    logo-blink
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+.heartbeat-svg {
+  width: 54px !important;
+  height: 48px !important;
+
+  max-width: 54px !important;
+  max-height: 48px !important;
+
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  display: block;
+
+  overflow: visible;
+}
+
+
+.heart-main {
+  transform-origin: center;
+
+  animation:
+    heart-beat
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+.heart-depth {
+  opacity: 0.95;
+}
+
+
+.heart-highlight {
+  animation:
+    highlight-blink
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+.heart-ecg {
+  stroke-dasharray: 140;
+
+  stroke-dashoffset: 140;
+
+  animation:
+    ecg-draw
+    1.8s
+    linear
+    infinite;
+}
+
+
+@keyframes heart-beat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.08);
+  }
+
+  20% {
+    transform: scale(0.98);
+  }
+
+  30% {
+    transform: scale(1.05);
+  }
+
+  45%,
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes logo-blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.78;
+  }
+}
+
+
+@keyframes highlight-blink {
+
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+
+@keyframes ecg-draw {
+
+  0% {
+    stroke-dashoffset: 140;
+    opacity: 0.4;
+  }
+
+  45% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  75% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -140;
+    opacity: 0.25;
+  }
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+.title-accent-line {
+  width: 90px;
+  height: 4px;
+
+  margin:
+    13px
+    0
+    10px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7347ff,
+      #d90429
+    );
+}
+
+
+.topbar-description {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #77718f;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   TOP ACTIONS
+   ============================================================ */
+
+.topbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  padding-top: 7px;
+}
+
+
+.ai-status-pill,
+.connection-pill {
+  min-height: 42px;
+
+  padding:
+    0
+    15px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+.ai-status-pill {
+  color: #443c68;
+
+  background: #f7f4ff;
+}
+
+
+.ai-status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #7347ff;
+}
+
+
+.connection-pill {
+  color: #6f6987;
+
+  background: #f6f5fa;
+}
+
+
+.connection-pill > span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #a7a1b8;
+}
+
+
+.connection-pill.connected {
+  color: #48735f;
+
+  background: #eefbf5;
+}
+
+
+.connection-pill.connected > span {
+  background: #20b777;
+}
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.refresh-button,
+.secondary-button {
+  min-height: 42px;
+
+  padding:
+    0
+    17px;
+
+  border:
+    1px
+    solid
+    #ded5f8;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  color: #673cff;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  transition: 0.2s ease;
+}
+
+
+.refresh-button:hover,
+.secondary-button:hover {
+  background: #f6f1ff;
+
+  border-color: #bda9ff;
+}
+
+
+/* ============================================================
+   GENERAL CARDS
+   ============================================================ */
+
+.selector-card,
+.patient-summary,
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.97);
+
+  border:
+    1px
+    solid
+    #e7e1f2;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0
+    10px
+    30px
+    rgba(
+      57,
+      42,
+      105,
+      0.045
+    );
+}
+
+
+/* ============================================================
+   SELECTOR
+   ============================================================ */
+
+.selector-card {
+  margin-top: 25px;
+
+  padding: 23px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+.selector-card h2,
+.dashboard-card h2 {
+  margin:
+    5px
+    0;
+
+  color: #29235f;
+
+  font-size: 24px;
+
+  line-height: 1.25;
+}
+
+
+.selector-card > div:first-child > p:last-child {
+  margin:
+    8px
+    0
+    0;
+
+  color: #77718c;
+
+  font-size: 16px;
+}
+
+
+.section-eyebrow {
+  margin: 0;
+
+  color: #7550e9;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+
+.selector-controls {
+  min-width: 410px;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+
+.selector-controls input,
+.selector-controls select,
+.page-actions input {
+  height: 46px;
+
+  border:
+    1px
+    solid
+    #ddd6ed;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #3f3963;
+
+  padding:
+    0
+    13px;
+
+  font-size: 15px;
+}
+
+
+.selector-controls input {
+  flex: 1;
+}
+
+
+.selector-controls select {
+  min-width: 170px;
+}
+
+
+/* ============================================================
+   INPUT GLOBAL
+   ============================================================ */
+
+input,
+select,
+textarea {
+  border:
+    1px
+    solid
+    #ddd6ed;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  color: #3f3963;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #9a7cff;
+
+  box-shadow:
+    0
+    0
+    0
+    3px
+    rgba(
+      115,
+      71,
+      255,
+      0.09
+    );
+}
+
+
+/* ============================================================
+   PATIENT SUMMARY
+   ============================================================ */
+
+.patient-summary {
+  margin-top: 18px;
+
+  padding: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+.patient-avatar {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #f1eaff;
+
+  color: #7042ee;
+
+  font-size: 25px;
+
+  font-weight: 800;
+}
+
+
+.patient-main {
+  flex: 1;
+}
+
+
+.patient-main h2 {
+  margin:
+    4px
+    0
+    8px;
+
+  font-size: 24px;
+}
+
+
+.patient-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px 20px;
+
+  color: #77718d;
+
+  font-size: 15px;
+}
+
+
+.patient-status {
+  min-width: 145px;
+
+  padding-left: 22px;
+
+  border-left:
+    1px
+    solid
+    #ebe7f3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.patient-status span {
+  color: #9a94ae;
+
+  font-size: 13px;
+}
+
+
+.patient-status strong {
+  color: #37305f;
+
+  font-size: 17px;
+}
+
+
+.patient-status small {
+  color: #7d7695;
+
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   ANALYTICS
+   ============================================================ */
+
+.analytics-grid {
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      5,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+}
+
+
+.analytics-card {
+  min-height: 130px;
+
+  padding: 20px;
+
+  border:
+    1px
+    solid
+    #e8e2f2;
+
+  border-radius: 16px;
+
+  background: #fff;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  box-shadow:
+    0
+    7px
+    22px
+    rgba(
+      55,
+      42,
+      100,
+      0.04
+    );
+}
+
+
+.analytics-card span {
+  color: #817a98;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.analytics-card strong {
+  color: #2d275e;
+
+  font-size: 31px;
+
+  line-height: 1.1;
+}
+
+
+.analytics-card small {
+  color: #a29caf;
+
+  font-size: 12px;
+}
+
+
+.analytics-card.blue {
+  border-top: 4px solid #4b8cff;
+}
+
+
+.analytics-card.green {
+  border-top: 4px solid #20b777;
+}
+
+
+.analytics-card.amber {
+  border-top: 4px solid #e5a51d;
+}
+
+
+.analytics-card.red {
+  border-top: 4px solid #e3445b;
+}
+
+
+.analytics-card.purple {
+  border-top: 4px solid #8b5cf6;
+}
+
+
+/* ============================================================
+   TWO COLUMN DASHBOARD
+   ============================================================ */
+
+.two-column-layout {
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(0, 1fr);
+
+  gap: 18px;
+}
+
+
+.dashboard-card {
+  padding: 23px;
+}
+
+
+.card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px
+    solid
+    #eeeaf5;
+}
+
+
+.card-header.compact {
+  padding-bottom: 15px;
+}
+
+
+.card-description {
+  margin:
+    5px
+    0
+    0;
+
+  color: #858097;
+
+  font-size: 16px;
+}
+
+
+/* ============================================================
+   RISK
+   ============================================================ */
+
+.risk-badge {
+  min-width: 75px;
+
+  padding:
+    8px
+    13px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 850;
+
+  text-transform: capitalize;
+}
+
+
+.risk-low {
+  color: #087a4c;
+
+  background: #e9faf2;
+}
+
+
+.risk-medium {
+  color: #9a6500;
+
+  background: #fff5d9;
+}
+
+
+.risk-high {
+  color: #b4233c;
+
+  background: #ffebef;
+}
+
+
+/* ============================================================
+   PREDICTION RESULT
+   ============================================================ */
+
+.prediction-highlight {
+  padding:
+    24px
+    0
+    18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.prediction-highlight > div:first-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.prediction-highlight span {
+  color: #817a96;
+
+  font-size: 15px;
+
+  font-weight: 650;
+}
+
+
+.prediction-highlight strong {
+  color: #2d275f;
+
+  font-size: 40px;
+
+  line-height: 1;
+}
+
+
+.probability-ring {
+  width: 94px;
+  height: 94px;
+
+  padding: 6px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #7347ff
+      var(--progress, 0%),
+      #ece8f5 0
+    );
+}
+
+
+.probability-ring > div {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #fff;
+}
+
+
+.probability-ring span {
+  color: #4e4770;
+
+  font-size: 17px;
+
+  font-weight: 850;
+}
+
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #eeeaf5;
+}
+
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  transition:
+    width
+    0.5s
+    ease;
+}
+
+
+.progress-fill.risk-low {
+  background: #20b777;
+}
+
+
+.progress-fill.risk-medium {
+  background: #e5a51d;
+}
+
+
+.progress-fill.risk-high {
+  background: #e3445b;
+}
+
+
+.prediction-message {
+  margin:
+    17px
+    0;
+
+  color: #69627f;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+
+.prediction-meta-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+
+.prediction-meta-grid > div {
+  padding: 13px;
+
+  border:
+    1px
+    solid
+    #eeeaf5;
+
+  border-radius: 11px;
+
+  background: #faf9fd;
+}
+
+
+.prediction-meta-grid span,
+.prediction-meta-grid strong {
+  display: block;
+}
+
+
+.prediction-meta-grid span {
+  margin-bottom: 4px;
+
+  color: #9992ab;
+
+  font-size: 12px;
+}
+
+
+.prediction-meta-grid strong {
+  color: #413a64;
+
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   DETAILS
+   ============================================================ */
+
+.details-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 11px;
+
+  margin-top: 18px;
+}
+
+
+.detail-item {
+  min-width: 0;
+
+  padding: 14px;
+
+  border:
+    1px
+    solid
+    #eeeaf5;
+
+  border-radius: 11px;
+
+  background: #faf9fd;
+}
+
+
+.detail-item span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #938ca7;
+
+  font-size: 12px;
+
+  font-weight: 650;
+}
+
+
+.detail-item strong {
+  display: block;
+
+  overflow-wrap: anywhere;
+
+  color: #403961;
+
+  font-size: 15px;
+
+  font-weight: 750;
+}
+
+
+/* ============================================================
+   INFORMATION CARDS
+   ============================================================ */
+
+.information-grid {
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 18px;
+}
+
+
+/* ============================================================
+   HISTORY TABLE
+   ============================================================ */
+
+.history-card {
+  margin-top: 18px;
+}
+
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  margin-top: 18px;
+
+  border:
+    1px
+    solid
+    #ebe7f3;
+
+  border-radius: 12px;
+}
+
+
+.history-table {
+  width: 100%;
+
+  min-width: 760px;
+
+  border-collapse: collapse;
+
+  background: #fff;
+}
+
+
+.history-table th {
+  padding: 14px;
+
+  background: #faf9fd;
+
+  color: #716a88;
+
+  border-bottom:
+    1px
+    solid
+    #e9e5f1;
+
+  font-size: 13px;
+
+  font-weight: 850;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+.history-table td {
+  padding: 15px;
+
+  color: #57506f;
+
+  border-bottom:
+    1px
+    solid
+    #f0edf5;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+
+.history-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+.history-table tbody tr:hover {
+  background: #fcfbff;
+}
+
+
+.history-table .selected-row {
+  background: #f7f2ff;
+}
+
+
+.table-empty {
+  padding: 35px !important;
+
+  text-align: center !important;
+
+  color: #918ba3 !important;
+}
+
+
+/* ============================================================
+   SELECT BUTTON
+   ============================================================ */
+
+.select-button {
+  padding:
+    8px
+    13px;
+
+  border:
+    1px
+    solid
+    #dcd2f7;
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  color: #673cff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+.select-button:hover {
+  background: #f4efff;
+}
+
+
+/* ============================================================
+   PAGES
+   ============================================================ */
+
+.page-card {
+  margin-top: 25px;
+}
+
+
+.page-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.page-actions input {
+  width: 220px;
+}
+
+
+/* ============================================================
+   ============================================================
+   PREDICTION PAGE
+   ============================================================
+   ============================================================ */
+
+.prediction-page-wrapper {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding-bottom: 50px;
+}
+
+
+/*
+   Main prediction page.
+   This creates a clean centered layout instead of
+   allowing everything to spread horizontally.
+*/
+
+.prediction-page-wrapper > * {
+  max-width: 1200px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ============================================================
+   PREDICTION HEADER
+   ============================================================ */
+
+.prediction-page-wrapper h1 {
+  color: #29245f;
+
+  font-size: 32px;
+
+  line-height: 1.25;
+
+  margin:
+    0
+    0
+    10px;
+}
+
+
+.prediction-page-wrapper h2 {
+  color: #332c63;
+
+  font-size: 22px;
+
+  margin:
+    0
+    0
+    8px;
+}
+
+
+.prediction-page-wrapper h3 {
+  color: #393263;
+
+  font-size: 18px;
+
+  margin:
+    0
+    0
+    6px;
+}
+
+
+.prediction-page-wrapper p {
+  color: #77718c;
+}
+
+
+/* ============================================================
+   PREDICTION FORM CONTAINER
+   ============================================================ */
+
+.prediction-page-wrapper form {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 0;
+
+  display: block;
+}
+
+
+/*
+   Every major form section becomes a separate white card.
+
+   This is the main fix for the clumsy layout visible
+   in your screenshots.
+*/
+
+.prediction-page-wrapper form > div {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 24px;
+
+  border:
+    1px
+    solid
+    #e5e0ef;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0
+    8px
+    25px
+    rgba(
+      55,
+      42,
+      100,
+      0.045
+    );
+}
+
+
+/* ============================================================
+   FORM SECTION HEADINGS
+   ============================================================ */
+
+.prediction-page-wrapper form > div h2,
+.prediction-page-wrapper form > div h3 {
+  padding-bottom: 12px;
+
+  margin-bottom: 18px;
+
+  border-bottom:
+    1px
+    solid
+    #eeeaf5;
+}
+
+
+.prediction-page-wrapper form > div h2::before,
+.prediction-page-wrapper form > div h3::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 5px;
+  height: 22px;
+
+  margin-right: 10px;
+
+  vertical-align: -4px;
+
+  border-radius: 5px;
+
+  background: #7347ff;
+}
+
+
+/* ============================================================
+   FORM FIELD GRID
+   ============================================================ */
+
+/*
+   Any container holding fields is converted into a grid.
+*/
+
+.prediction-page-wrapper form .form-grid,
+.prediction-page-wrapper form .fields-grid,
+.prediction-page-wrapper form .input-grid,
+.prediction-page-wrapper form .row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+
+/* ============================================================
+   FORM FIELD
+   ============================================================ */
+
+.prediction-page-wrapper form .form-group,
+.prediction-page-wrapper form .field,
+.prediction-page-wrapper form .form-field,
+.prediction-page-wrapper form .input-group {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.prediction-page-wrapper form label {
+  display: block;
+
+  color: #514a70;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+
+.prediction-page-wrapper form label span {
+  color: #514a70;
+}
+
+
+/* ============================================================
+   FORM INPUTS
+   ============================================================ */
+
+.prediction-page-wrapper form input,
+.prediction-page-wrapper form select,
+.prediction-page-wrapper form textarea {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 46px;
+
+  padding:
+    10px
+    13px;
+
+  border:
+    1px
+    solid
+    #dcd6e9;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  color: #3c365c;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.prediction-page-wrapper form textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+
+.prediction-page-wrapper form input:hover,
+.prediction-page-wrapper form select:hover {
+  border-color: #c7bceb;
+}
+
+
+.prediction-page-wrapper form input:focus,
+.prediction-page-wrapper form select:focus,
+.prediction-page-wrapper form textarea:focus {
+  border-color: #8b6cf6;
+
+  box-shadow:
+    0
+    0
+    0
+    3px
+    rgba(
+      115,
+      71,
+      255,
+      0.1
+    );
+
+  background: #fff;
+}
+
+
+/* ============================================================
+   NUMBER INPUT
+   ============================================================ */
+
+.prediction-page-wrapper form input[type="number"] {
+  appearance: textfield;
+}
+
+
+.prediction-page-wrapper form input[type="number"]::-webkit-inner-spin-button,
+.prediction-page-wrapper form input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   CHECKBOX
+   ============================================================ */
+
+.prediction-page-wrapper form input[type="checkbox"] {
+  width: 18px;
+
+  min-width: 18px;
+
+  height: 18px;
+
+  min-height: 18px;
+
+  padding: 0;
+
+  accent-color: #7347ff;
+
+  box-shadow: none;
+}
+
+
+.prediction-page-wrapper form
+label:has(input[type="checkbox"]) {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-height: 46px;
+
+  padding:
+    10px
+    13px;
+
+  border:
+    1px
+    solid
+    #e2ddef;
+
+  border-radius: 10px;
+
+  background: #faf9fd;
+
+  cursor: pointer;
+}
+
+
+/* ============================================================
+   FULL WIDTH FIELD
+   ============================================================ */
+
+.prediction-page-wrapper form
+.full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* ============================================================
+   HELPER TEXT
+   ============================================================ */
+
+.prediction-page-wrapper form small {
+  color: #918aa5;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* ============================================================
+   MODEL INPUTS LABEL
+   ============================================================ */
+
+.prediction-page-wrapper
+.section-eyebrow {
+  margin-bottom: 7px;
+}
+
+
+/* ============================================================
+   FORM SUBMIT AREA
+   ============================================================ */
+
+.prediction-page-wrapper form button[type="submit"] {
+  min-height: 50px;
+
+  padding:
+    0
+    28px;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7347ff,
+      #5b2ee6
+    );
+
+  color: #fff;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0
+    8px
+    20px
+    rgba(
+      115,
+      71,
+      255,
+      0.2
+    );
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.prediction-page-wrapper form button[type="submit"]:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0
+    11px
+    25px
+    rgba(
+      115,
+      71,
+      255,
+      0.28
+    );
+}
+
+
+/* ============================================================
+   RUN PREDICTION SECTION
+   ============================================================ */
+
+.prediction-page-wrapper
+.prediction-action,
+.prediction-page-wrapper
+.form-actions,
+.prediction-page-wrapper
+.submit-section {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding:
+    20px
+    24px;
+
+  border:
+    1px
+    solid
+    #e4def1;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fbfaff,
+      #f7f3ff
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* ============================================================
+   RESULT CARD
+   ============================================================ */
+
+.prediction-page-wrapper
+.prediction-result,
+.prediction-page-wrapper
+.result-card,
+.prediction-page-wrapper
+.model-result {
+  width: 100%;
+
+  margin-top: 22px;
+
+  padding: 28px;
+
+  border:
+    1px
+    solid
+    #e2dced;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0
+    10px
+    30px
+    rgba(
+      57,
+      42,
+      105,
+      0.06
+    );
+}
+
+
+.prediction-page-wrapper
+.prediction-result h2,
+.prediction-page-wrapper
+.result-card h2,
+.prediction-page-wrapper
+.model-result h2 {
+  color: #29235f;
+
+  font-size: 25px;
+
+  margin:
+    0
+    0
+    20px;
+}
+
+
+/* ============================================================
+   RESULT RISK
+   ============================================================ */
+
+.prediction-page-wrapper
+.prediction-result
+.risk-badge,
+.prediction-page-wrapper
+.result-card
+.risk-badge {
+  font-size: 14px;
+
+  padding:
+    9px
+    18px;
+}
+
+
+/* ============================================================
+   LOADING SCREEN
+   ============================================================ */
+
+.loading-screen {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f6f2ff
+    );
+
+  text-align: center;
+}
+
+
+.loading-heart-logo {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+}
+
+
+.loading-heart-logo .heartbeat-svg {
+  width: 75px !important;
+  height: 68px !important;
+}
+
+
+.loading-screen h2 {
+  margin:
+    0
+    0
+    8px;
+
+  color: #29235f;
+
+  font-size: 24px;
+}
+
+
+.loading-screen p {
+  margin: 0;
+
+  color: #817b96;
+}
+
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+.error-message {
+  margin-top: 15px;
+
+  padding:
+    13px
+    16px;
+
+  border:
+    1px
+    solid
+    #ffd1d8;
+
+  border-radius: 10px;
+
+  background: #fff1f3;
+
+  color: #b4233c;
+
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   RESPONSIVE - LAPTOP
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+  .main-area {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .analytics-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+  }
+
+  .information-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .prediction-page-wrapper form .form-grid,
+  .prediction-page-wrapper form .fields-grid,
+  .prediction-page-wrapper form .input-grid,
+  .prediction-page-wrapper form .row {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE - TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .main-area {
+    width: calc(100% - 220px);
+
+    margin-left: 220px;
+  }
+
+  .topbar {
+    flex-direction: column;
+  }
+
+  .topbar-actions {
+    justify-content: flex-start;
+  }
+
+  .selector-card {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .selector-controls {
+    min-width: 0;
+
+    width: 100%;
+  }
+
+  .two-column-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .information-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE - MOBILE
+   ============================================================ */
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: auto;
+
+    padding: 15px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px
+      solid
+      #e7e2f1;
+  }
+
+  .app-shell {
+    display: block;
+  }
+
+  .main-area {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding:
+      0
+      15px
+      30px;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+
+    overflow-x: auto;
+
+    margin-top: 15px;
+
+    padding-bottom: 5px;
+  }
+
+  .nav-item {
+    min-width: max-content;
+
+    min-height: 45px;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .topbar {
+    padding-top: 25px;
+  }
+
+  .main-title-row {
+    align-items: flex-start;
+  }
+
+  .title-heartbeat-logo {
+    width: 45px;
+    height: 45px;
+
+    min-width: 45px;
+  }
+
+  .heartbeat-svg {
+    width: 43px !important;
+    height: 40px !important;
+  }
+
+  .main-title-row h1 {
+    font-size: 27px;
+  }
+
+  .topbar-description {
+    font-size: 14px;
+  }
+
+  .topbar-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .ai-status-pill,
+  .connection-pill,
+  .refresh-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .selector-card,
+  .patient-summary,
+  .dashboard-card {
+    padding: 18px;
+  }
+
+  .selector-controls {
+    flex-direction: column;
+  }
+
+  .selector-controls select {
+    width: 100%;
+  }
+
+  .patient-summary {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .patient-status {
+    width: 100%;
+
+    padding:
+      15px
+      0
+      0;
+
+    border-left: 0;
+
+    border-top:
+      1px
+      solid
+      #ebe7f3;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-meta-grid,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Prediction form mobile */
+
+  .prediction-page-wrapper form > div {
+    padding: 18px;
+
+    border-radius: 15px;
+  }
+
+  .prediction-page-wrapper form .form-grid,
+  .prediction-page-wrapper form .fields-grid,
+  .prediction-page-wrapper form .input-grid,
+  .prediction-page-wrapper form .row {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .prediction-page-wrapper
+  .prediction-action,
+  .prediction-page-wrapper
+  .form-actions,
+  .prediction-page-wrapper
+  .submit-section {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .prediction-page-wrapper
+  form button[type="submit"] {
+    width: 100%;
+  }
+
+  .page-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .page-actions input {
+    width: 100%;
+  }
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline:
+    3px
+    solid
+    rgba(
+      115,
+      71,
+      255,
+      0.2
+    );
+
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   REMOVE OLD LARGE DECORATIVE GRAPHICS
+   ============================================================ */
+
+.main-area > svg:not(.heartbeat-svg),
+.main-area > .hero-logo,
+.main-area > .hero-graphic,
+.main-area > .background-logo,
+.main-area > .decorative-logo,
+.main-area > .prediction-logo,
+.main-area > .logo-animation,
+.main-area > .shape-logo,
+.main-area > .large-logo,
+.main-area > .floating-logo,
+.old-logo,
+.old-heart-logo,
+.large-heart-logo,
+.decorative-heart,
+.background-heart,
+.hero-shape,
+.large-shape,
+.geometric-logo {
+  display: none !important;
+}
+
+/* ============================================================
+   ADD ADMISSION
+   Added without changing the existing dashboard styles.
+   ============================================================ */
+
+.add-admission-button {
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid #ded5f8;
+  border-radius: 10px;
+  background: #673cff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.add-admission-button:hover {
+  background: #5b2ee6;
+  border-color: #5b2ee6;
+  transform: translateY(-1px);
+}
+
+.add-admission-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(41, 36, 95, 0.35);
+  backdrop-filter: blur(3px);
+  overflow-y: auto;
+}
+
+.add-admission-modal {
+  width: min(980px, 100%);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  border: 1px solid #e7e1f2;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 25px 70px rgba(41, 36, 95, 0.18);
+}
+
+.add-admission-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 23px 25px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #eeeaf5;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.add-admission-modal-header h2 {
+  margin: 4px 0 5px;
+  color: #29235f;
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.add-admission-modal-header p:last-child {
+  margin: 0;
+  color: #77718c;
+  font-size: 14px;
+}
+
+.add-admission-close {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border: 1px solid #ded5f8;
+  border-radius: 10px;
+  background: #fff;
+  color: #673cff;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.add-admission-close:hover {
+  background: #f6f1ff;
+}
+
+.add-admission-form {
+  padding: 22px 25px 25px;
+}
+
+.add-admission-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #e8e2f2;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.add-admission-section-heading {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eeeaf5;
+}
+
+.add-admission-section-heading h3 {
+  margin: 0 0 4px;
+  color: #332c63;
+  font-size: 18px;
+}
+
+.add-admission-section-heading span {
+  color: #858097;
+  font-size: 13px;
+}
+
+.add-admission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.add-admission-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.add-admission-field > span {
+  color: #514a70;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.add-admission-field input,
+.add-admission-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #dcd6e9;
+  border-radius: 10px;
+  background: #fff;
+  color: #3c365c;
+  outline: none;
+  font-size: 14px;
+}
+
+.add-admission-field input:focus,
+.add-admission-field select:focus {
+  border-color: #8b6cf6;
+  box-shadow: 0 0 0 3px rgba(115, 71, 255, 0.1);
+}
+
+.add-admission-checkbox {
+  min-height: 44px;
+  align-self: end;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  border: 1px solid #e2ddef;
+  border-radius: 10px;
+  background: #faf9fd;
+  color: #514a70;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.add-admission-checkbox input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #7347ff;
+}
+
+.add-admission-error {
+  margin-bottom: 18px;
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border: 1px solid #ffd1d8;
+  border-radius: 10px;
+  background: #fff1f3;
+  color: #b4233c;
+  font-size: 14px;
+}
+
+.add-admission-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.add-admission-submit {
+  min-height: 46px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7347ff, #5b2ee6);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(115, 71, 255, 0.2);
+}
+
+.add-admission-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 25px rgba(115, 71, 255, 0.28);
+}
+
+@media (max-width: 900px) {
+  .add-admission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .add-admission-overlay {
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .add-admission-modal {
+    max-height: calc(100vh - 24px);
+    border-radius: 15px;
+  }
+
+  .add-admission-modal-header,
+  .add-admission-form {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .add-admission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-admission-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .add-admission-actions button {
+    width: 100%;
+  }
+
+  .add-admission-button {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   DEPARTMENT, DIAGNOSIS & DISEASE RISK FACTORS STYLES
+   ============================================================ */
+
+.result-dept-diag-box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.result-dept-card,
+.result-diag-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid #e5e0f0;
+  background: linear-gradient(135deg, #ffffff, #faf8ff);
+  box-shadow: 0 4px 14px rgba(41, 35, 95, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-dept-card:hover,
+.result-diag-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(115, 71, 255, 0.08);
+}
+
+.result-dept-icon,
+.result-diag-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: #f0ebff;
+  border: 1px solid #e0d5ff;
+}
+
+.result-dept-label,
+.result-diag-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #7347ff;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.result-dept-value,
+.result-diag-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: #29235f;
+  line-height: 1.35;
+}
+
+.result-dept-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #787290;
+}
+
+.result-diag-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.mini-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #f3effe;
+  border: 1px solid #e2d7fc;
+  color: #5533c2;
+}
+
+/* Disease Risk Factors Section */
+.disease-risk-factors-section {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 22px;
+  background: #fcfbfe;
+  border: 1px solid #e8e2f4;
+  border-radius: 16px;
+}
+
+.disease-risk-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ede8f5;
+}
+
+.disease-risk-header h3 {
+  margin: 4px 0 6px;
+  color: #29235f;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.disease-risk-sub {
+  margin: 0;
+  color: #6f6888;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.risk-factors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.risk-factor-card {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e9e5f2;
+  box-shadow: 0 2px 8px rgba(41, 35, 95, 0.03);
+  transition: 0.2s ease;
+}
+
+.risk-factor-card:hover {
+  transform: translateY(-1px);
+}
+
+.factor-card-high {
+  border-left: 4px solid #ef4444;
+  background: linear-gradient(135deg, #ffffff, #fffafa);
+}
+
+.factor-card-moderate {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(135deg, #ffffff, #fffdf8);
+}
+
+.factor-card-low {
+  border-left: 4px solid #10b981;
+  background: linear-gradient(135deg, #ffffff, #f9fffb);
+}
+
+.risk-factor-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.risk-factor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.risk-factor-category {
+  font-size: 11px;
+  font-weight: 700;
+  color: #8a82a0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.risk-factor-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #29235f;
+  line-height: 1.3;
+}
+
+.risk-factor-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.factor-badge-high {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+}
+
+.factor-badge-moderate {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #d97706;
+}
+
+.factor-badge-low {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #059669;
+}
+
+.risk-factor-value-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #433c66;
+  background: #f4f0fa;
+  border: 1px solid #e7e0f2;
+}
+
+.risk-factor-desc {
+  margin: 0;
+  font-size: 13px;
+  color: #5d5675;
+  line-height: 1.45;
+}
+
+/* Clinical Recommendations */
+.clinical-recommendations-box {
+  margin-top: 18px;
+  margin-bottom: 22px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f7f4ff, #edf2ff);
+  border: 1px solid #ded5f8;
+}
+
+.recommendations-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #29235f;
+  font-size: 15px;
+}
+
+.recommendations-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recommendations-list li {
+  font-size: 13px;
+  color: #403866;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .result-dept-diag-box {
+    grid-template-columns: 1fr;
+  }
+  .risk-factors-grid {
+    grid-template-columns: 1fr;
+  }
+}
